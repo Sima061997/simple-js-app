@@ -4,3 +4,12 @@ body {
     
 }
 
+.class-to-button {
+    background: blue;
+    font-size: 30px;
+     padding: 20px 20px;
+     text-align: center;
+     display: inline-block;
+     cursor: pointer;
+    
+}
