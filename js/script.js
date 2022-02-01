@@ -3,6 +3,7 @@ let pokemonRepository = (function () {
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
   let modalContainer = document.querySelector('#modal-container');
 
+  /*showModal function shows the Name, Height, Image of Pokemon.  */
  function showModal(title, text, imageUrl) {
 
     modalContainer.innerHTML = '';
@@ -40,8 +41,9 @@ let pokemonRepository = (function () {
   function hideModal() {
     modalContainer.classList.remove('is-visible');
   }
-
+  
   window.addEventListener('keydown', (e) => {
+     //modal gets hide with the click of esc key
     if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
       hideModal();  
     }
@@ -54,11 +56,7 @@ let pokemonRepository = (function () {
       hideModal();
     }
   });
-/*
-  document.querySelector('class-to-button').addEventListener('click', () => {
-    showModal('Title', 'Paragraph');
-  });
-*/
+
   function addListItem(pokemon){
     //element 'ul' is selected and 'li', 'button' elements are created
   
@@ -67,8 +65,7 @@ let pokemonRepository = (function () {
     let button = document.createElement('button');        
     button.innerText = pokemon.name;
   
-    //class added
-  
+    //class to pokemon button added
     button.classList.add('class-to-button');
     listItem.appendChild(button);
     pokemonList.appendChild(listItem);
