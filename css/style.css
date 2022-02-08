@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Syne+Tactile&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Domine:wght@600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Domine:wght@600&display=swap");
 :root {
   --color: linear-gradient(to right, purple,pink, rgb(211, 126, 70) );
 }
@@ -14,17 +14,19 @@ body {
 img{
   width: 150px;
 }
+
 #navbarNav a:matches(:hover, :focus) {
   opacity: 0.9px;
   
 }
+
 #navbarNav {
   font-size: 20px;
   padding-right: 15px;
  
 }
 
-.tophead {
+.topHead {
   margin-top: 40px;
   font-size: 50px;
 }

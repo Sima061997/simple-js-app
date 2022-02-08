@@ -8,18 +8,18 @@ var pokemonRepository = function () {
 
   function addListItem(pokemon) {
     //element 'ul' is selected and 'li', 'button' elements are created
-    var pokemonList = document.querySelector('.list-group');
-    var listItem = document.createElement('li');
-    listItem.classList.add('group-list-item');
-    var button = document.createElement('button');
+    var pokemonList = document.querySelector(".list-group");
+    var listItem = document.createElement("li");
+    listItem.classList.add("group-list-item");
+    var button = document.createElement("button");
     button.innerText = pokemon.name; //class and attribute to pokemon button added
 
-    button.classList.add('btn-primary');
-    button.setAttribute('data-bs-target', '#exampleModal');
-    button.setAttribute('data-bs-toggle', 'modal');
+    button.classList.add("btn-primary");
+    button.setAttribute("data-bs-target", "#exampleModal");
+    button.setAttribute("data-bs-toggle", "modal");
     listItem.appendChild(button);
     pokemonList.appendChild(listItem);
-    button.addEventListener('click', function (event) {
+    button.addEventListener("click", function (event) {
       showDetails(pokemon);
     });
   }
@@ -71,7 +71,7 @@ var pokemonRepository = function () {
   function showDetails(pokemon) {
     pokemonRepository.loadDetails(pokemon).then(function () {
       showModal(pokemon);
-      console.log(pokemon, 'listInModal');
+      console.log(pokemon);
     });
   }
   /*showModal function shows the Name, Height, Image of Pokemon.  */
@@ -95,6 +95,7 @@ var pokemonRepository = function () {
     modalHeader.append(modalTitle);
     modalBody.append(heightElement);
     modalBody.append(imageElement);
+    loadDetails(pokemon);
   }
 
   return {
