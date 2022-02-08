@@ -14,10 +14,14 @@ body {
 img{
   width: 150px;
 }
-
+#navbarNav a:matches(:hover, :focus) {
+  opacity: 0.9px;
+  
+}
 #navbarNav {
   font-size: 20px;
   padding-right: 15px;
+ 
 }
 
 .tophead {
