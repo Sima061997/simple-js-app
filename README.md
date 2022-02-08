@@ -6,6 +6,7 @@
 - CSS
 - Bootstrap Library
 - jQuery
+
  For the Debugging of the code:
 - Linter
 - HTML validator
