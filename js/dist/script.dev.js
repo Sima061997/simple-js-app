@@ -5,60 +5,18 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 var pokemonRepository = function () {
   var pokemonList = [];
   var apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-  var modalContainer = document.querySelector('#modal-container');
-  /*showModal function shows the Name, Height, Image of Pokemon.  */
-
-  function showModal(title, text, imageUrl) {
-    modalContainer.innerHTML = '';
-    var modal = document.createElement('div');
-    modal.classList.add('modal');
-    var closeButtonElement = document.createElement('button');
-    closeButtonElement.classList.add('modal-close');
-    closeButtonElement.innerText = 'X';
-    closeButtonElement.addEventListener('click', hideModal);
-    var titleElement = document.createElement('h1');
-    titleElement.innerText = title;
-    var contentElement = document.createElement('p');
-    contentElement.innerText = text;
-    var pokemonImage = document.createElement('img');
-    pokemonImage.src = imageUrl;
-    modal.appendChild(pokemonImage);
-    modal.appendChild(closeButtonElement);
-    modal.appendChild(titleElement);
-    modal.appendChild(contentElement);
-    modalContainer.appendChild(modal);
-    modalContainer.classList.add('is-visible');
-    loadDetails(pokemon);
-  }
-
-  function hideModal() {
-    modalContainer.classList.remove('is-visible');
-  }
-
-  window.addEventListener('keydown', function (e) {
-    //modal gets hide with the click of esc key
-    if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
-      hideModal();
-    }
-  });
-  modalContainer.addEventListener('click', function (e) {
-    // Since this is also triggered when clicking INSIDE the modal
-    // We only want to close if the user clicks directly on the overlay
-    var target = e.target;
-
-    if (target === modalContainer) {
-      hideModal();
-    }
-  });
 
   function addListItem(pokemon) {
     //element 'ul' is selected and 'li', 'button' elements are created
-    var pokemonList = document.querySelector('.pokemon-list');
+    var pokemonList = document.querySelector('.list-group');
     var listItem = document.createElement('li');
+    listItem.classList.add('group-list-item');
     var button = document.createElement('button');
-    button.innerText = pokemon.name; //class to pokemon button added
+    button.innerText = pokemon.name; //class and attribute to pokemon button added
 
-    button.classList.add('class-to-button');
+    button.classList.add('btn-primary');
+    button.setAttribute('data-bs-target', '#exampleModal');
+    button.setAttribute('data-bs-toggle', 'modal');
     listItem.appendChild(button);
     pokemonList.appendChild(listItem);
     button.addEventListener('click', function (event) {
@@ -112,18 +70,41 @@ var pokemonRepository = function () {
 
   function showDetails(pokemon) {
     pokemonRepository.loadDetails(pokemon).then(function () {
-      showModal(pokemon.name, pokemon.height, pokemon.imageUrl);
+      showModal(pokemon);
+      console.log(pokemon, 'listInModal');
     });
+  }
+  /*showModal function shows the Name, Height, Image of Pokemon.  */
+
+
+  function showModal(pokemon) {
+    var modalHeader = $(".modal-header");
+    var modalTitle = $(".modal-title");
+    var modalBody = $(".modal-body"); //clear existing content of the modal
+
+    modalTitle.empty();
+    modalBody.empty(); //creating element for the name" in modal content
+
+    var nameElement = $("<h1>" + pokemon.name + "</h1>"); // creating img in modal content
+
+    var imageElement = $('<img class="modal-img" style="width:50%">');
+    imageElement.attr("src", pokemon.imageUrl); //creating element for height in modal content
+
+    var heightElement = $("<p>" + "height : " + pokemon.height + "</p>");
+    modalTitle.append(nameElement);
+    modalHeader.append(modalTitle);
+    modalBody.append(heightElement);
+    modalBody.append(imageElement);
   }
 
   return {
-    showModal: showModal,
     addListItem: addListItem,
     add: add,
     getAll: getAll,
     loadList: loadList,
     loadDetails: loadDetails,
-    showDetails: showDetails
+    showDetails: showDetails,
+    showModal: showModal
   };
 }();
 

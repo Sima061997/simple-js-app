@@ -1,93 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Syne+Tactile&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@600&display=swap');
 :root {
-  --color: linear-gradient(to right, purple,pink, orange );
+  --color: linear-gradient(to right, purple,pink, rgb(211, 126, 70) );
 }
 
 body {
     background: var(--color);
     text-align: center;
-    
-}
-  
-/*Styling of Pokemon buttons*/
-
-.class-to-button {
-    background: blue;
-    font-size: 25px;
-    padding: 10px;
-     text-align: center;
-     display: inline-block;
-     cursor: pointer;
-     color: azure;
-     width: 200px;
-     border-radius: 5px;
-     border: none;
-     outline: none;
+    font-family:'Domine', serif;
      
 }
-.class-to-button:hover{
+
+img{
+  width: 150px;
+}
+
+#navbarNav {
+  font-size: 20px;
+  padding-right: 15px;
+}
+
+.tophead {
+  margin-top: 40px;
+  font-size: 50px;
+}
+
+h1 {
+ font-family: 'Syne Tactile', cursive;
+ font-size: 40px;
+ padding: 5px;
+}
+
+.btn-primary {
+  background: rgb(180, 40, 138);
+  display: inline-block;
+  border-radius: 5px;
+  font-size: 25px;
+    padding: 10px;
+  border: none;
+  outline: none;
+}
+
+.btn-primary:hover{
   background-color: yellowgreen;
 }
 
- .pokemon-list li {
+ .list-group li { 
 list-style: none;
 margin-top: 3%;
 }
 
-#modal-container {
-    position: fixed;
-    padding: 20px;
-    box-sizing: border-box;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    /* to show it above other content */
-    z-index: 999; 
-  
-    /* to allow scrolling if the screen is not high enough*/
-    overflow: auto; 
-  
-    /* this is used to center the modal */
-    display: grid;
-    text-align: center;
+.modal p {
+  margin-bottom: 0;
+  font-size: 25px;
 }
 
-.modal {
-    margin: auto;
-    display: inline-block;
-    box-sizing: border-box;
-    background: var(--color);
-    padding: 5px;
-    width: 100%;
-    max-width: 700px;
-    text-align: center;
-    border-radius: 1%;
-  }
-  
-  .modal-close {
-    float: right;
-    -webkit-appearance: none;
-    border: 0;
-    background: none;
-    color: #777;
-    text-decoration: underline;
-  }
-  
-  .modal h1 {
-    margin-top: 0;
-  }
-  
-  .modal p {
-    margin-bottom: 0;
-    font-size: 25px;
-  }
+.modal h1 {
+  margin-top: 0;
+}
 
-  #modal-container {
-    display: none;
-  }
-  
-  #modal-container.is-visible {
-    /* CSS for modal container - add your own desired CSS styles here */
-    display: block;
-  }
+.modal-content {
+  background: var(--color);
+}
+
+.btn-secondary {
+  background: blue;
+}
