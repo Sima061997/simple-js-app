@@ -7,7 +7,7 @@
 body {
     background: var(--color);
     text-align: center;
-    font-family:'Domine', serif;
+    font-family:"Domine", serif;
      
 }
 
@@ -32,7 +32,7 @@ img{
 }
 
 h1 {
- font-family: 'Syne Tactile', cursive;
+ font-family: "Syne Tactile", cursive;
  font-size: 40px;
  padding: 5px;
 }

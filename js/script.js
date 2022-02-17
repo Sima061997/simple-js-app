@@ -1,6 +1,6 @@
 let pokemonRepository = (function () {
   let pokemonList = [];
-  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+  let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
   
   function addListItem(pokemon){
     //element 'ul' is selected and 'li', 'button' elements are created
@@ -91,7 +91,7 @@ function showModal(pokemon) {
   //creating element for the name" in modal content
   let nameElement = $("<h1>" + pokemon.name + "</h1>");
   // creating img in modal content
-  let imageElement = $('<img class="modal-img" style="width:50%">');
+  let imageElement = $("<img class=\"modal-img\" style=\"width:50%\">");
   imageElement.attr("src", pokemon.imageUrl);
   //creating element for height in modal content
   let heightElement = $("<p>" + "height : " + pokemon.height + "</p>");

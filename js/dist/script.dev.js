@@ -4,7 +4,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
 var pokemonRepository = function () {
   var pokemonList = [];
-  var apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+  var apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
 
   function addListItem(pokemon) {
     //element 'ul' is selected and 'li', 'button' elements are created
@@ -87,7 +87,7 @@ var pokemonRepository = function () {
 
     var nameElement = $("<h1>" + pokemon.name + "</h1>"); // creating img in modal content
 
-    var imageElement = $('<img class="modal-img" style="width:50%">');
+    var imageElement = $("<img class=\"modal-img\" style=\"width:50%\">");
     imageElement.attr("src", pokemon.imageUrl); //creating element for height in modal content
 
     var heightElement = $("<p>" + "height : " + pokemon.height + "</p>");
